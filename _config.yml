@@ -1,0 +1,35 @@
+title: asher
+description: Notes on code, tools, and stuff i'm working on.
+baseurl: ""
+url: "https://antoash.github.io"
+
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  notes:
+    output: true
+    permalink: /notes/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: entry
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: entry
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+exclude:
+  - README.md

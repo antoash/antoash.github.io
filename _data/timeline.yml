@@ -1,0 +1,18 @@
+- org: "Manipal Institute of Technology"
+  year: "2019 — 2023"
+  status: completed
+  description: "Electrical & Electronics Engineering" 
+
+# - role: "Intern/Analyst"
+- org: "Deloitte - Intern/Analyst"
+  year: "2023 — 2024"
+  status: completed
+  description:
+    - "Technology & Transformation - Visualization/PowerBI"
+
+# - role: "Contract SWE"
+- org: "AMD - Contract SWE"
+  year: "2025 — present"
+  status: current
+  description:
+    - "Windows Kernel Mode Driver development"

@@ -1,0 +1,267 @@
+body {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 0 20px;
+  background: #FFFFFF;
+  color: #111111;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  line-height: 1.25;
+  color: #1B2A56;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 22px; margin-top: 2.2em; }
+
+a { color: #1B2A56; }
+a:visited { color: #8A2E22; }
+a:hover { background: #F5C518; color: #111111; }
+
+nav {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+nav a { margin-right: 4px; color: #1B2A56; font-weight: bold; }
+nav .sep { color: #F5C518; margin: 0 6px; font-weight: bold; }
+
+.site-header {
+  margin-bottom: 10px;
+}
+.site-tagline {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  color: #444444;
+  margin-top: 4px;
+}
+
+/* two-tone segmented rule, blue/yellow only */
+hr {
+  border: none;
+  height: 6px;
+  margin: 2em 0;
+  background: repeating-linear-gradient(
+    90deg,
+    #1B2A56 0, #1B2A56 16px,
+    #F5C518 16px, #F5C518 32px
+  );
+  image-rendering: pixelated;
+}
+
+.meta {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: #444444;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+.post-list li {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.post-list .date {
+  color: #444444;
+  margin-right: 10px;
+}
+.post-list a {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+pre, code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  background: #F0F0F0;
+  padding: 2px 5px;
+}
+pre {
+  padding: 12px;
+  overflow-x: auto;
+  max-width: 100%;
+  border: 2px solid #1B2A56;
+}
+pre code {
+  padding: 0;
+  background: none;
+}
+
+blockquote {
+  border-left: 4px solid #F5C518;
+  margin-left: 0;
+  padding-left: 16px;
+  color: #333333;
+}
+
+footer {
+  margin-top: 4em;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  color: #666666;
+}
+
+/* images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5em 0;
+  border: 3px solid #1B2A56;
+  box-shadow: 3px 3px 0 #F5C518;
+}
+figure {
+  margin: 1.5em 0;
+}
+figcaption {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: #444444;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* regular content lists, distinct from .post-list */
+article ul, article ol {
+  padding-left: 1.4em;
+}
+article ul { list-style: none; }
+article ul li::before {
+  margin-left: -1.4em;
+  padding-right: 6px;
+}
+article ol { list-style: decimal; }
+article li {
+  margin-bottom: 0.4em;
+}
+
+/* tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 15px;
+}
+th, td {
+  border: 1px solid #DDD;
+  padding: 6px 10px;
+  text-align: left;
+}
+th {
+  background: #F0F0F0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: #111111;
+}
+
+/* --- pixel-game inspired chrome --- */
+.pixel-title {
+  font-family: "Press Start 2P", Georgia, serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.dialogue-box {
+  display: inline-block;
+  background: #FFFFFF;
+  border: 3px solid #1B2A56;
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #F5C518;
+  padding: 8px 14px;
+  margin: 12px 0;
+}
+.dialogue-box .cursor {
+  color: #F5C518;
+  margin-right: 6px;
+  animation: cursor-blink 1s steps(1) infinite;
+}
+@keyframes cursor-blink {
+  50% { opacity: 0; }
+}
+
+/* menu-cursor bullets, replacing squares */
+.post-list li::before,
+article ul li::before,
+.quest-desc li::before {
+  content: "\25B6 ";
+  padding-right: 6px;
+}
+
+.post-list li::before {
+  color: #F5C518;
+}
+article ul li::before,
+.quest-desc li::before {
+  color: #E3350D;
+}
+
+/* --- career timeline --- */
+.quest-log {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1.5em 0;
+}
+
+.quest-entry {
+  position: relative;
+  padding: 0 0 20px 24px;
+  border-left: 2px solid #1B2A56;
+}
+.quest-entry:first-child {
+  border-left: 2px solid transparent;
+  padding-bottom: 0;
+}
+.quest-entry::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  background: #1B2A56;
+  border: 2px solid #FFFFFF;
+}
+.quest-entry.current::before {
+  background: #F5C518;
+}
+
+.quest-meta {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+  color: #444444;
+  margin-bottom: 2px;
+}
+
+/* .quest-clear {
+  color: #F5C518;
+  font-weight: bold;
+} */
+
+.quest-org {
+  color: #1B2A56;
+  font-weight: bold;
+}
+
+/* .quest-role {
+  font-weight: bold;
+  color: #1B2A56;
+  margin-bottom: 4px;
+} */
+
+.quest-entry.current .quest-role {
+  color: #8A2E22;
+}
+
+.quest-desc {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
