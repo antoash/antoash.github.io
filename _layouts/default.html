@@ -14,7 +14,12 @@
     <h1 class="pixel-title"><a href="{{ '/' | relative_url }}" style="text-decoration:none; color:inherit;">{{ site.title }}</a></h1>
     <div class="site-tagline">{{ site.description }}</div>
     <nav class="dialogue-box">
-      <span class="cursor">&#9654;</span><a href="{{ '/about/' | relative_url }}">about</a><span class="sep">|</span><a href="{{ '/projects/' | relative_url }}">projects</a><span class="sep">|</span><a href="{{ '/notes/' | relative_url }}">notes</a>
+      {% for entry in site.data.nav %}
+        <a href="{{ entry.url | relative_url }}" {% if page.url == entry.url %}class="active"{% endif %}>
+          {% if page.url == entry.url %}<span class="cursor">&#9654;</span>{% endif %}{{ entry.label }}
+        </a>
+        {% unless forloop.last %}<span class="sep">|</span> {% endunless %}
+      {% endfor %}
     </nav>
     <hr>
   </header>

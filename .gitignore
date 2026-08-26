@@ -6,3 +6,4 @@ vendor/
 *.swp
 *.swo
 .DS_Store
+planner.md

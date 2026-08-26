@@ -17,7 +17,11 @@ h1, h2, h3 {
 h1 { font-size: 28px; }
 h2 { font-size: 22px; margin-top: 2.2em; }
 
-a { color: #1B2A56; }
+/* Hyper-links */
+a {
+  color: #1B2A56;
+  text-decoration: none;
+}
 a:visited { color: #8A2E22; }
 a:hover { background: #F5C518; color: #111111; }
 
@@ -26,7 +30,14 @@ nav {
   font-size: 14px;
   margin-bottom: 10px;
 }
-nav a { margin-right: 4px; color: #1B2A56; font-weight: bold; }
+nav a { /* Only applies to <a> inside <nav> */
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  margin-right: 4px;
+  color: #1B2A56;
+  font-weight: bold;
+}
 nav .sep { color: #F5C518; margin: 0 6px; font-weight: bold; }
 
 .site-header {
@@ -169,7 +180,9 @@ th {
 }
 
 .dialogue-box {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   background: #FFFFFF;
   border: 3px solid #1B2A56;
   border-radius: 0;
@@ -177,11 +190,19 @@ th {
   padding: 8px 14px;
   margin: 12px 0;
 }
+
 .dialogue-box .cursor {
   color: #F5C518;
   margin-right: 6px;
+  display: none;  /* Hide cursor by default */
+}
+
+/* Active link */
+.dialogue-box a.active .cursor {
+  display: inline;
   animation: cursor-blink 1s steps(1) infinite;
 }
+
 @keyframes cursor-blink {
   50% { opacity: 0; }
 }
